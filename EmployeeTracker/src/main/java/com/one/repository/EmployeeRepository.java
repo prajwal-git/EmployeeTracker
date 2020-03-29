@@ -9,7 +9,8 @@ import org.springframework.data.jpa.repository.Query;
 import com.one.model.Employee;
 
 //public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
-//we changed to JPA REPO becuase it will give additional functions like pagination, JSON etc
+//we changed to JPA REPO because it will give additional functions like pagination, JSON etc
+
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	List<Employee> findByempName(String empName);

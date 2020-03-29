@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.PutMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -66,19 +66,19 @@ public class EmployeeController {
 		return "redirect:/listEmployee";	
 	}
 	
-	@PostMapping("/addEmployeeRest")
-	@ResponseBody
-	public Employee addemployeeRest(@RequestBody Employee emp) {
-		empRepo.save(emp);
-		return emp;
-	}	
+//	@PostMapping("/addEmployeeRest")
+//	@ResponseBody
+//	public Employee addemployeeRest(@RequestBody Employee emp) {
+//		empRepo.save(emp);
+//		return emp;
+//	}	
 	
-	@PutMapping("/addEmployeeRestPut")
-	@ResponseBody
-	public Employee addemployeeRestPut(@RequestBody Employee emp) {
-		empRepo.save(emp);
-		return emp;
-	}		
+//	@PutMapping("/addEmployeeRestPut")
+//	@ResponseBody
+//	public Employee addemployeeRestPut(@RequestBody Employee emp) {
+//		empRepo.save(emp);
+//		return emp;
+//	}		
 	
 	@GetMapping("fetchEmployee")
 	public ModelAndView fetchEmployee(@RequestParam int id) {
@@ -110,23 +110,23 @@ public class EmployeeController {
 	//Maven uses Jackson API to convert entity to JSON format
 	//Optional is Like LIST for Java 8 
 	//REST API
-	@RequestMapping("/getEmployee/{id}")
-	@ResponseBody
-	public Optional<Employee> getEmployee(@PathVariable("id") int input) {
-		
-		//System.out.println("Printing All Employee");
-		return empRepo.findById(input);
-	}	
-	
+//	@RequestMapping("/getEmployee/{id}")
+//	@ResponseBody
+//	public Optional<Employee> getEmployee(@PathVariable("id") int input) {
+//		
+//		//System.out.println("Printing All Employee");
+//		return empRepo.findById(input);
+//	}	
+//	
 	//@PathVariable // for JSON request
 	
-	@RequestMapping(path ="/getEmployeeJson/{id}", produces = {"application/json"})
-	@ResponseBody
-	public Optional<Employee> getEmployeeJson(@PathVariable("id") int input) {
-		
-		//System.out.println("Printing All Employee");
-		return empRepo.findById(input);
-	}	
+//	@RequestMapping(path ="/getEmployeeJson/{id}", produces = {"application/json"})
+//	@ResponseBody
+//	public Optional<Employee> getEmployeeJson(@PathVariable("id") int input) {
+//		
+//		//System.out.println("Printing All Employee");
+//		return empRepo.findById(input);
+//	}	
 		
 	
 
