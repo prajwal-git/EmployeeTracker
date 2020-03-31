@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 //import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.one.model.Department;
 import com.one.model.Employee;
+import com.one.repository.DepartmentRepository;
 import com.one.repository.EmployeeRepository;
 
 @Controller
@@ -30,11 +32,28 @@ public class EmployeeController {
 	@Autowired
 	EmployeeRepository empRepo;
 	
+	@Autowired
+	DepartmentRepository depRepo;
+	
+	
 	public  EmployeeController() {
 		// TODO Auto-generated constructor stub
 		
 		System.out.println("Controller Check");
 	}
+	
+	@ResponseBody
+	public ModelAndView departmentListDetail() {
+		List<Department> department = depRepo.findAll();
+		for(Department dp: department) {
+		System.out.println(dp);
+		}
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("DeptObject",department);
+		mv.setViewName("ViewEmployee");
+		return mv;
+	}
+	
 	
 	@GetMapping("/")
 	public String dashBoard() {

@@ -1,11 +1,4 @@
 
-
-
-<%-- EMP Name : ${EmpObject.empName}
-
-EMP Dept : ${EmpObject.empDept} --%>
-
-
 <%-- 
     Document   : index
     Created on : Aug 22, 2018, 10:27:20 PM
@@ -19,7 +12,7 @@ EMP Dept : ${EmpObject.empDept} --%>
 <html>
 
 <head>
-  <title>Employee List</title>
+  <title>Department List</title>
  <!-- Head file-->  
  <jsp:include page="includes/headInclude.jsp" />
 </head>
@@ -33,34 +26,33 @@ EMP Dept : ${EmpObject.empDept} --%>
         <jsp:include page="includes/rightCol.jsp"/>
       <div id="content">
         <!-- insert the page content here -->
-        <h1>Employee List</h1>
+        <h1>Department List</h1>
 
        <!-- Button-->
-       <input type="button" value="Add Employee" 
-              onclick="window.location.href='showFormEmployee'"
+       <input type="button" value="Add Department" 
+              onclick="window.location.href='showFormDepartment'"
               class ="add-student-button"/>
  
            <table>
             <tr id="tableBar">
                 <th>Id</th>
                 <th>Name</th>
-                <th>Department</th>
                 <th>Action</th>
             </tr>
-           <c:forEach var="tempEmp" items="${EmpObject}">
+           <c:forEach var="tempDept" items="${DeptObject}">
            		<!--  Delete Link -->
-				<c:url var= "tempDelete" value ="deleteEmployee">
-				<c:param name="id" value="${tempEmp.id}"/>
+				<c:url var= "tempDelete" value ="deleteDepartment">
+				<c:param name="id" value="${tempDept.did}"/>
 				</c:url> 
 				<!--  Update Link -->
-				<c:url var= "tempUpdate" value ="showFormEmployeeUpdate">
-				<c:param name="id" value="${tempEmp.id}"/>	
+				<c:url var= "tempUpdate" value ="showFormDepartmentUpdate">
+				<c:param name="id" value="${tempDept.did}"/>	
 				</c:url>
 				
            <tr>
-                <td>${tempEmp.id}</td>
-                <td> ${tempEmp.empName}</td>
-                <td>${tempEmp.empDept}</td>
+                <td>${tempDept.did}</td>
+                <td> ${tempDept.deptName}</td>
+               
                 <td><a href="${tempUpdate}">Update</a> | <a href="${tempDelete}" onclick="if(!(confirm('Continue to Delete'))) return false">Delete</a></td>
             </tr>
            
