@@ -9,7 +9,7 @@
 <html>
 
 <head>
-  <title>Add Employee</title>
+  <title>Add Department</title>
  <!-- Head file-->  
  <jsp:include page="includes/headInclude.jsp" />
 </head>
@@ -23,11 +23,11 @@
         <jsp:include page="includes/rightCol.jsp"/>
       <div id="content">
         <!-- insert the page content here -->
-        <h1>Add Employee</h1>
+        <h1>Add Department</h1>
       
-        <form:form action="addEmployee" modelAttribute="Employee" method="POST">
+        <form:form action="addDepartment" modelAttribute="Department" method="POST">
         
-        <form:hidden path="id"/>  
+        <form:hidden path="did"/>  
             <table>
             <!-- <tr>
             <td>
@@ -35,32 +35,8 @@
             </tr> -->
             <tr>
             <td>
-            <label>Employee Name </label></td><td><form:input path="empName" /></td>
+            <label>Department Name </label></td><td><form:input path="deptName" /></td>
              </tr>
-            <tr>
-            <td>
-            <label>Department </label></td><td><form:input path="empDept"/></td>
-            </tr>
-            
-            <tr>
-            <td>
-            <label>Department Id</label></td>
-            <td>
-	            
-				<form:select path="department">
-					
-
-                	<form:option value="NONE" label="--- Select ---"/>
-   					<%-- <form:options items="${DeptObject}" />	 --%>
-					<form:option value="1" label="Web"/>
-					<form:option value="2" label="RND"/>
-           		 	
-				
-				</form:select>        
-            
-            </td>
-            </tr>            
-            
             <tr>
                 <td></td>
                 <td><input type="submit" value="Save" class="save"></td>
@@ -69,7 +45,7 @@
         </form:form>
         
         <p>
-            <a href="listEmployee">Back to Employee List</a>
+            <a href="listDepartment">Back to Department List</a>
         </p>
       </div>
     </div>

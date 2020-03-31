@@ -19,6 +19,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	@Query("from Employee where empDept =?1 order by id")
 	List<Employee> findBydeptSorted(String empDept);
+
 	
 
 }
